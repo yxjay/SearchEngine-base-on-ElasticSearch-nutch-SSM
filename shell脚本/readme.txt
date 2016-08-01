@@ -1,0 +1,1 @@
+脚本中的Nutch与ElasticSearch为绝对路径，要做相应的更改！

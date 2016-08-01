@@ -1,0 +1,110 @@
+<!DOCTYPE>
+<html lang="zh-CN">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后. -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>网页抓取设置</title>
+        <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+
+    <link href="../css/yxjay.css" rel="stylesheet"/>    
+    <script src="../js/jquery-1.9.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+         //网页设置模块
+      function websetting() {
+    	  var rightcode = $("#rightcode").val().trim();
+    	  var url = $("#url").val().trim();
+    	  if(rightcode.length==0)
+    	  {
+    	  	alert("权限码不能为空！");
+    	  	$("#rightcode").val("");
+    	  	$("#rightcode").focus();
+    	  	return;
+    	  }
+    	  if(rightcode.indexOf("-")!=4 || rightcode.length!=9 )
+    	  {
+    	  	alert("权限码格式错误！");
+    	  	$("#rightcode").focus();
+    	  	return;
+    	  }
+    	  if(url.length==0)
+    	  {
+    	  	alert("网址不能为空！");
+    	  	$("#url").val("");
+    	  	$("#url").focus();
+    	  	return;
+    	  }
+      	  $.ajax({       
+              type:"post",
+  			  url:"../handlers/webSetting?rightcode="+rightcode+"&url="+url,// 跳转到 action 
+  			  contentType:"application/json;charset=utf-8",						  				
+			  success:function(json){
+				 var obj = eval(json);
+		         if (obj.length >0) {
+			          if(obj[0].result == "ok")
+			          {
+			          	alert("已提交至后台服务器处理，抓取过程需一定时间，请耐心等待！");
+			          }
+			          else if(obj[0].result=="noright")
+			          {
+			          	alert("权限码不正确，请联系客服,客服电话：13625062505！");
+			          	$("#rightcode").focus();
+			          }
+			          else if(obj[0].result=="wrongurl")
+			          {
+			          	alert("网址格式错误，请重新输入！");
+			          	$("#url").focus();
+			          }
+			          else if(obj[0].result=="repeatcommit")
+			          {
+			          	alert("后台URL已是该网址，请勿重复提交！");
+			          }
+			          else
+			          {	          	
+			          	alert("未知错误，请联系客服：13625062505！");
+			          }
+			          
+		         }
+		         else
+		         {
+		         	alert("服务器连接失败！");
+		         }
+			  }	
+		  });
+      }
+    </script>
+  </head>
+ 
+  <body style="position:obsolute">
+    <div id="wrapper">
+      <div class="skinBg" style="background-image: url('../img/websetting.jpg');"></div>
+    </div>
+
+
+<!-- <br><br><br><br><br><br><br><br><br><br><br><br> -->
+<form class="form-inline" style="margin-left:39%;">
+  <div class="form-group" style="margin-top:32%;>
+    <label for="exampleInputName2"><font color="#FFF">权限Code:</font></label>
+    <input type="text" class="form-control" id="rightcode" placeholder="ABCD-EFGH">
+  </div>
+  <br><br>
+  <div class="form-group">
+    <label for="exampleInputEmail2"><font color="#FFF">&nbsp;&nbsp;抓取Urls:</font></label>
+    <input type="website" class="form-control" id="url" placeholder="www.jmu.edu.cn">
+  </div>
+  <br><br>
+  <a onclick="websetting()" type="submit" class="btn btn-danger" style="margin-left:4%;width:80px;" >提交</a>
+  <a type="submit" class="btn btn-warning" style="margin-left:6%;width:80px;" href="begin.jsp">返回</a>
+</form>
+
+
+    <!--页脚-->
+    <div class="footer-class-webset">
+      <p >©2016  版权所有 Email:yxjay@163.com</p>
+    </div>
+   
+  </body>
+</html>

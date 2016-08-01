@@ -1,0 +1,144 @@
+
+.indexcontent{
+	width:42%;
+	position:fixed;
+	margin-left:10.5%;
+	z-index:1000;
+	background:#fff;
+	border-color: #e7e7e7;
+}
+
+
+#indexcontent div{
+	display: block;
+	font-color:#337ab7;
+	font-size : 1.5em;
+	cursor:pointer;
+	padding:2px;
+    color: #337ab7;
+    line-height: 1.42857143;
+    border: 1px solid #e7e7e7;
+    border-radius: 1px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+#indexcontent div:hover {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+#navlist a:link#current, #navlist a:visited#current, #navlist a:hover {
+    border-bottom: 1px solid #76B41C;
+    padding-bottom: 5px;
+    background: #e7e7e7;
+    color: #fff;
+}
+
+.sasa{
+    border-bottom: 1px solid #76B41C;
+    padding-bottom: 5px;
+    background: #e7e7e7;
+    color: #fff;	
+}
+.center{
+	margin-top: 105px;
+}
+.left-30{
+	margin-left: 30px;
+}
+.left-76{
+	margin-left:76%;
+}
+
+.footer-class-index{
+  margin-top:220px;
+  padding: 1.5em 0;
+  text-align:center;
+  color:#FFF;
+}
+
+.footer-class-webset{
+  margin-top:160px;
+  padding: 1.5em 0;
+  text-align:center;
+  color:#FFF;
+}
+
+.footer-class{
+  position:absolute;
+  botton:0px;
+  left:0px;
+  height:30px;
+  text-align:center;
+  color:#E2E2E2;
+ /* background:#000;*/
+}
+.highlight{
+	color:#F00;
+}
+.website{	
+	color:#0f0;
+}
+
+.shot{
+	color:999999;
+	text-decoration: underline;
+}
+
+.text-left{
+	text-align:left;
+}
+
+.text-right{
+	text-align:right;
+}
+
+.bg{
+  background:url(图片地址) no-repeat center fixed;
+  background-size:contain
+}
+
+.skinBg{
+  width:100%;
+  height:100%;
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:-10;
+  background-position:center 0;
+  background-size:cover;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+}
+
+.form-control {
+  display: block;
+  width: 30%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.btn-50{
+  width=50px;
+}
+
+.handcursor{
+	cursor:hand;
+}

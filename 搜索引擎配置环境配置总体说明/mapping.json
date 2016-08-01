@@ -1,0 +1,49 @@
+{
+	"settings" : {
+			"analysis" : {
+				"analyzer" : {
+					"ik" : {
+						"tokenizer":"ik_max_word"
+						}
+				}
+		}
+	},
+	"mappings" : {
+		"webpage": {
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "text" : {
+            "type" : "string",
+	    			"term_vector" : "with_positions_offsets",
+	    			"analyzer" : "ik_max_word",
+            			"search_analyzer" : "ik_max_word",
+	    			"include_in_all" : "true",
+	    			"boost" : 1
+          },
+          "title" : {
+           	"type" : "string",
+	    			"term_vector" : "with_positions_offsets",
+				"analyzer" : "ik_max_word",
+            			"search_analyzer" : "ik_max_word",
+	    			"include_in_all" : "true",
+	    			"boost" : 3
+          },
+          "typ" : {
+            "type" : "string"
+          },
+          "baseUrl" : {
+            "type" : "string"
+          },
+          "fetchTime" : {
+            "type" : "long"
+          },
+	"content" : {
+	  "type" : "string"
+	  }
+        }
+      }
+   }
+}
+
